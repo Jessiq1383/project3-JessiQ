@@ -1,10 +1,73 @@
  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');/* Root typography settings */
+:root {
+  --text-size-xs: 0.56rem;
+  --text-size-sm: 0.75rem;
+  --text-size-md: 1rem;
+  --text-size-lg: 1.33rem;
+  --text-size-xl: 1.78rem;
+  --text-size-2xl: 2.37rem;
+  --text-size-3xl: 3.16rem;
+  --text-size-4xl: 4.21rem;
+  --text-size-5xl: 5.61rem;
+  --line-height-base: 1.65;
+  --line-height-headings: 1.15;
+  --line-length: 30rem;  /* max width of a line of text */
+  --headings-family: "Bricolage Grotesque", sans-serif;
+  --base-family: "Lexend", sans-serif;
+
+  /* Color styles */
+  --primary-text: rgba(48, 48, 48, 1);
+  --primary-background: rgba(132, 206, 224, 1);
+  --secondary-text: rgba(230, 138, 115, 1);
+  --secondary-background: rgba(48, 48, 48, 1);
+  --action: rgba(226, 70, 133, 1);
+  --action-hover: hsl(336, 73%, 38%);
+  --highlight: #B3F793;
+
+  /* Spacing Units */
+  --space-unit: 1rem;
+  --space-xs: calc(var(--space-unit) * 0.25);
+  --space-sm: calc(var(--space-unit) * 0.5);
+  --space-md: calc(var(--space-unit) * 1);
+  --space-lg: calc(var(--space-unit) * 1.5);
+  --space-xl: calc(var(--space-unit) * 2);
+  --space-xxl: calc(var(--space-unit) * 3);
+  
+
+}
+
+html {
+  font-size: 16px;
+}
+@media (min-width: 684px){
+  :root{
+    --line-length: 35rem;
+  }
+    html {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1375px){
+  :root{
+    --line-length: 40rem;
+  }
+  html {
+    font-size: 24px;
+  }
+}
+
 
 /* basic responsive image css */
 body{
 
+
+   font-family: var(--base-family);
+  font-weight: false;
+  line-height: var(--line-height-base);
   margin: 0;
   padding: 0;
+  background-color: var(--primary-background);
+  color: var(--primary-text);
   
 }
 img, video{
