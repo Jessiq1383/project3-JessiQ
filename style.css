@@ -1,6 +1,188 @@
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');/* Root typography settings */
 
 /* basic responsive image css */
+body{
+
+  margin: 0;
+  padding: 0;
+  
+}
 img, video{
   max-width: 100%;
   height: auto;
+}
+
+.landmakr{
+  background-color: re;
+}
+.landmarks-grid{
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+figure{ margin:0;}
+
+
+
+
+/* ============================================ 
+Responsive video Section of CSS
+==============================================*/
+
+.videoWrapper {
+	position: relative;
+	padding-top: 25px;
+	height: 0;
+  clear:both;
+}
+
+/* 16:9 aspect ratio wrapper */
+.videoWrapper.ratio-16-9{
+    padding-bottom: 56.25%; /* 9 ÷ 16 = .5625 which is 56.25% */
+}
+
+/* 4:3 aspect ratio wrapper */
+.videoWrapper.ratio-4-3{
+    padding-bottom: 75%; /* 3 ÷ 4 = .75 which is 75% */
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.site-title{
+  font-family: "Source Code Pro", monospace;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+.intro{
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 0;
+  
+
+}
+.intro-container{
+
+  margin-bottom: 4rem;
+  width: 100%;
+ display: inline-block;
+ 
+  flex-direction: column;
+  justify-content: center;
+  height: 900px;
+}
+
+.featured-landmark{
+  margin-top: 20rem;
+  margin-bottom: 3rem;
+}
+
+html{
+
+
+ font-family: "Playfair Display SC", serif;
+font-size: 20px;
+color: #fff;
+line-height: 1.6;
+  
+}
+
+body{
+  background-color: #64B2BC;
+width: 70ch;
+margin-left: auto;
+margin-right: auto;
+}
+
+/* CARDS SECTION  */
+
+
+
+card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* -------------------------------------------------------------------------
+ADD YOUR STYLES HERE
+------------------------------------------------------------------------- */
+.card{
+  
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1.5px solid #e6e6e6;
+  background-color: #193564;
+  color: #ffffff;
+  border-radius: 20px;
+/*    Helps images comply with the border radius nicely*/
+  overflow: hidden; 
+}
+
+.card-image{
+  
+  position: relative; 
+  
+  
+}
+
+.category{ 
+
+ position: absolute; 
+ top: 10px; 
+  right: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  background: #193564;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-size: .8rem;
+  
+
+}
+
+
+
+.card-actions{
+  
+  padding: 0 1rem 1rem 1rem;
+  
+}
+
+.card-title{
+  
+  text-decoration: underline;
+  text-align: center;
+  color: #fff;
+  
+}
+
+.card-desc{
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+
+  
+}
+
+a{
+  color: #ffffff;
+  text-decoration: none;
+}
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
 }
