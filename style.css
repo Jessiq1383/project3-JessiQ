@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');/* Root typography settings */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');/* Root typography settings */
 :root {
   --text-size-xs: 0.56rem;
   --text-size-sm: 0.75rem;
@@ -40,19 +40,16 @@ html {
   font-size: 16px;
 }
 @media (min-width: 684px){
-  :root{
-    --line-length: 35rem;
-  }
-    html {
-    font-size: 18px;
-  }
+  
+  html { font-size: 1px; }
 }
 @media (min-width: 1375px){
-  :root{
-    --line-length: 40rem;
-  }
+  
+  html { font-size: 24px; }
+}
+@media (max-width: 480px) {
   html {
-    font-size: 24px;
+    font-size: 14px;
   }
 }
 
@@ -61,22 +58,130 @@ html {
 body{
 
 
-   font-family: var(--base-family);
+  font-family: var(--base-family);
   font-weight: false;
   line-height: var(--line-height-base);
   margin: 0;
   padding: 0;
-  background-color: var(--primary-background);
-  color: var(--primary-text);
   
 }
+p{ 
+  font-size: var(--text-size-md);
+  margin-bottom: 1rem;
+
+}
+a{
+  color: var(--action);
+}
+
+a:hover{
+  color: var(--action-hover);
+}
+
+a:visited{
+  color: var(--action);
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--headings-family);
+  font-weight: 700;
+  line-height: var(--line-height-headings);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+
+
+h1,
+.text-size-h1 {
+  margin-top: 0;
+  font-size: var(--text-size-4xl);
+}
+
+h2,
+.text-size-h2 {
+  font-size: var(--text-size-3xl);
+}
+
+h3,
+.text-size-h3 {
+  font-size: var(--text-size-2xl);
+}
+
+h4,
+.text-size-h4 {
+  font-size: var(--text-size-xl);
+}
+
+h5,
+.text-size-h5 {
+  font-size: var(--text-size-lg);
+}
+
+.text-caption {
+  font-size: var(--text-size-sm);
+}
+
+small,
+.text-small {
+  font-size: var(--text-size-xs);
+}
+
+figure {
+  position: relative;
+}
+
+figure img {
+  vertical-align: middle;
+  /* remove gap below image */
+}
+
+.text-caption {
+  margin: 0;
+  padding: .5rem;
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.intro {
+  font-size: var(--text-size-lg);
+}
+
+.site-title {
+  font-family: var(--headings-family);
+  font-weight: 100;
+  font-size: var(--text-size-xl);
+}
+
+.hero img {
+  max-width: 40rem;
+  width: 100%;
+}
+
+/* ============================================ 
+Responsive video Section of CSS
+==============================================*/
+
+
+
 img, video{
   max-width: 100%;
   height: auto;
 }
 
 .landmakr{
-  background-color: re;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--secondary-background);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(20,20,20, .4);
 }
 .landmarks-grid{
   display: grid;
@@ -88,10 +193,6 @@ figure{ margin:0;}
 
 
 
-
-/* ============================================ 
-Responsive video Section of CSS
-==============================================*/
 
 .videoWrapper {
 	position: relative;
@@ -155,17 +256,17 @@ html{
 
 
  font-family: "Playfair Display SC", serif;
-font-size: 20px;
+font-size: 20px;  /* this fights the scaling above */
 color: #fff;
 line-height: 1.6;
   
 }
 
-body{
+body {
   background-color: #64B2BC;
-width: 70ch;
-margin-left: auto;
-margin-right: auto;
+  width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* CARDS SECTION  */
@@ -241,11 +342,43 @@ ADD YOUR STYLES HERE
   
 }
 
-a{
-  color: #ffffff;
-  text-decoration: none;
+
+
+.landmark-page .intro{
+
+  padding: 0 var(--space-md);
+
 }
-a:visited {
-  color: #ffffff;
-  text-decoration: none;
+
+.landmark-page .about{
+ 
+  padding: 0 var(--space-md);
+
+
+}
+
+.landmark-page .images-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space md)
+}
+
+.landmark-page figcaption{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255,255,255, .8);
+  padding: var(--space-xs);
+}
+
+@media (min-width:684px){
+  .landmark-page .images-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width:1375px){
+  .landmark-page .images-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
