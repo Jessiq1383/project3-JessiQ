@@ -1,30 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');/* Root typography settings */
-:root {
-  --text-size-xs: 0.56rem;
-  --text-size-sm: 0.75rem;
-  --text-size-md: 1rem;
-  --text-size-lg: 1.33rem;
-  --text-size-xl: 1.78rem;
-  --text-size-2xl: 2.37rem;
-  --text-size-3xl: 3.16rem;
-  --text-size-4xl: 4.21rem;
-  --text-size-5xl: 5.61rem;
-  --line-height-base: 1.65;
-  --line-height-headings: 1.15;
-  --line-length: 30rem;  /* max width of a line of text */
-  --headings-family: "Bricolage Grotesque", sans-serif;
-  --base-family: "Lexend", sans-serif;
+/* -------------------------------------------------
+ROOT TYPOGRAPHY SETTINGS
+--------------------------------------------------*/
 
-  /* Color styles */
+:root {
+  --font-headings: "Playfair Display SC", serif;
+  --font-body: "Lexend", sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 3rem;
+
+  --line-height-base: 1.6;
+  --line-height-headings: 1.2;
+  --line-length: 70ch;
+
   --primary-text: rgba(48, 48, 48, 1);
-  --primary-background: rgba(132, 206, 224, 1);
-  --secondary-text: rgba(230, 138, 115, 1);
+  --secondary-text: #1e3a5f; /* dark blue accent color */
+  --primary-background: #64B2BC;
   --secondary-background: rgba(48, 48, 48, 1);
+
   --action: rgba(226, 70, 133, 1);
   --action-hover: hsl(336, 73%, 38%);
   --highlight: #B3F793;
 
-  /* Spacing Units */
   --space-unit: 1rem;
   --space-xs: calc(var(--space-unit) * 0.25);
   --space-sm: calc(var(--space-unit) * 0.5);
@@ -32,360 +34,320 @@
   --space-lg: calc(var(--space-unit) * 1.5);
   --space-xl: calc(var(--space-unit) * 2);
   --space-xxl: calc(var(--space-unit) * 3);
-  
 
+  --clr-nav: #ffffff;
+  --clr-nav-hover: #333333;
+  --clr-nav-hover-bg: #ffffff;
+  --clr-nav-background: #333333;
+  /* These change the easing of transitions, used on menu button */
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);/* ease in and out */
+  --ease-in: cubic-bezier(0.42, 0, 1, 1);/* ease in */
+  --ease-out: cubic-bezier(0, 0, 0.58, 1);/* ease out */
+  --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1); /* ease in and out, more pronounced */
+  
 }
+
+
+/* -------------------------------------------------
+RESPONSIVE ROOT FONT SIZE
+--------------------------------------------------*/
 
 html {
-  font-size: 16px;
-}
-@media (min-width: 684px){
-  
-  html { font-size: 1px; }
-}
-@media (min-width: 1375px){
-  
-  html { font-size: 24px; }
-}
-@media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
+  font-size: clamp(16px, 1.5vw, 20px);
 }
 
 
-/* basic responsive image css */
-body{
+/* -------------------------------------------------
+BASE TYPOGRAPHY
+--------------------------------------------------*/
 
-
-  font-family: var(--base-family);
-  font-weight: false;
+body {
+  font-family: var(--font-body);
   line-height: var(--line-height-base);
-  margin: 0;
+  color: var(--primary-text);
+  background-color: var(--primary-background);
+  margin: 0 auto;
   padding: 0;
-  
+  width: var(--line-length);
 }
-p{ 
-  font-size: var(--text-size-md);
-  margin-bottom: 1rem;
 
+p {
+  font-size: var(--text-md);
+  margin-bottom: 1rem;
+  max-width: var(--line-length);
 }
-a{
+
+a {
   color: var(--action);
 }
 
-a:hover{
+a:hover {
   color: var(--action-hover);
 }
 
-a:visited{
-  color: var(--action);
-}
+
+/* -------------------------------------------------
+HEADINGS
+--------------------------------------------------*/
+
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: var(--headings-family);
+  font-family: var(--font-headings);
   font-weight: 700;
   line-height: var(--line-height-headings);
   margin-top: var(--space-xl);
   margin-bottom: var(--space-sm);
+  color: var(--primary-text);
 }
 
-
-
-h1,
-.text-size-h1 {
+h1 {
+  font-size: var(--text-3xl);
   margin-top: 0;
-  font-size: var(--text-size-4xl);
 }
 
-h2,
-.text-size-h2 {
-  font-size: var(--text-size-3xl);
+/* use secondary color for section headers */
+h2 {
+  font-size: var(--text-2xl);
+  color: var(--secondary-text); 
 }
 
-h3,
-.text-size-h3 {
-  font-size: var(--text-size-2xl);
+h3 {
+  font-size: var(--text-xl);
 }
 
-h4,
-.text-size-h4 {
-  font-size: var(--text-size-xl);
+h4 {
+  font-size: var(--text-lg);
 }
 
-h5,
-.text-size-h5 {
-  font-size: var(--text-size-lg);
+h5 {
+  font-size: var(--text-md);
 }
 
-.text-caption {
-  font-size: var(--text-size-sm);
+
+/* -------------------------------------------------
+UTILITY CLASSES
+--------------------------------------------------*/
+
+.text-caption,
+figcaption {
+  font-size: var(--text-sm);
+  color: var(--secondary-text); 
+  opacity: 0.9;
+}
+
+
+.text-accent {
+  color: var(--secondary-text);
+  font-weight: 600;
 }
 
 small,
 .text-small {
-  font-size: var(--text-size-xs);
+  font-size: var(--text-xs);
 }
+
+
+/* -------------------------------------------------
+FIGURES & CAPTIONS
+--------------------------------------------------*/
 
 figure {
   position: relative;
+  margin: 0;
 }
 
 figure img {
   vertical-align: middle;
-  /* remove gap below image */
 }
 
-.text-caption {
-  margin: 0;
-  padding: .5rem;
+figure figcaption {
   position: absolute;
-  bottom: -3px;
+  bottom: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, .85);
+  padding: var(--space-xs);
 }
+
+
+/* -------------------------------------------------
+INTRO SECTION
+--------------------------------------------------*/
 
 .intro {
-  font-size: var(--text-size-lg);
+  font-size: var(--text-lg);
+  text-align: center;
 }
 
 .site-title {
-  font-family: var(--headings-family);
-  font-weight: 100;
-  font-size: var(--text-size-xl);
-}
-
-.hero img {
-  max-width: 40rem;
-  width: 100%;
-}
-
-/* ============================================ 
-Responsive video Section of CSS
-==============================================*/
-
-
-
-img, video{
-  max-width: 100%;
-  height: auto;
-}
-
-.landmakr{
-  display: flex;
-  flex-direction: column;
-
-  background-color: var(--secondary-background);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 5px 5px 15px rgba(20,20,20, .4);
-}
-.landmarks-grid{
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-figure{ margin:0;}
-
-
-
-
-.videoWrapper {
-	position: relative;
-	padding-top: 25px;
-	height: 0;
-  clear:both;
-}
-
-/* 16:9 aspect ratio wrapper */
-.videoWrapper.ratio-16-9{
-    padding-bottom: 56.25%; /* 9 ÷ 16 = .5625 which is 56.25% */
-}
-
-/* 4:3 aspect ratio wrapper */
-.videoWrapper.ratio-4-3{
-    padding-bottom: 75%; /* 3 ÷ 4 = .75 which is 75% */
-}
-
-.videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-
-.site-title{
-  font-family: "Source Code Pro", monospace;
+  font-family: var(--font-headings);
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: var(--text-xl);
   text-align: center;
   margin-bottom: 0;
   margin-top: 1rem;
 }
-.intro{
-  font-family: "Source Code Pro", monospace;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 0;
-  
 
+
+/* -------------------------------------------------
+VIDEO SECTION
+--------------------------------------------------*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
-.intro-container{
 
-  margin-bottom: 4rem;
+.videoWrapper {
+  position: relative;
+  padding-top: 25px;
+  height: 0;
+  clear: both;
+}
+
+.videoWrapper.ratio-16-9 {
+  padding-bottom: 56.25%;
+}
+
+.videoWrapper.ratio-4-3 {
+  padding-bottom: 75%;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
- display: inline-block;
- 
+  height: 100%;
+}
+
+
+/* -------------------------------------------------
+LANDMARK PAGE TYPOGRAPHY
+--------------------------------------------------*/
+
+.landmark-page .intro,
+.landmark-page .about {
+  padding: 0 var(--space-md);
+}
+
+
+/* -------------------------------------------------
+PAGINATION
+--------------------------------------------------*/
+
+section {
+  margin-bottom: var(--space-xxl);
+  background: rgba(255, 255, 255, 0.45);
+  padding: var(--space-lg);
+  border-radius: 16px;
+}
+
+section > *:not(:last-child) {
+  margin-bottom: var(--space-md);
+}
+
+/* --- SIMILARITY: Section headings --------------------------------------- */
+
+h2 {
+  color: var(--secondary-text);
+  border-bottom: 3px solid var(--secondary-text);
+  padding-bottom: .25rem;
+  display: inline-block;
+}
+
+/* ---  Cards  */
+
+.card {
+  background: #193564;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 900px;
-}
-
-.featured-landmark{
-  margin-top: 20rem;
-  margin-bottom: 3rem;
-}
-
-html{
-
-
- font-family: "Playfair Display SC", serif;
-font-size: 20px;  /* this fights the scaling above */
-color: #fff;
-line-height: 1.6;
-  
-}
-
-body {
-  background-color: #64B2BC;
-  width: 70ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* CARDS SECTION  */
-
-
-
-card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-/* -------------------------------------------------------------------------
-ADD YOUR STYLES HERE
-------------------------------------------------------------------------- */
-.card{
-  
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  border: 1.5px solid #e6e6e6;
-  background-color: #193564;
-  color: #ffffff;
-  border-radius: 20px;
-/*    Helps images comply with the border radius nicely*/
-  overflow: hidden; 
+.card-actions {
+  padding: 0 1.25rem 1.25rem 1.25rem;
 }
 
-.card-image{
-  
-  position: relative; 
-  
-  
-}
-
-.category{ 
-
- position: absolute; 
- top: 10px; 
-  right: 10px;
-  color: #ffffff;
-  font-weight: bold;
-  background: #193564;
-  padding: 2px 8px;
-  border-radius: 999px;
+.category {
+  background: var(--secondary-text);
+  color: white;
   text-transform: uppercase;
-  font-size: .8rem;
-  
-
+  letter-spacing: 0.5px;
+  padding: .25rem .75rem;
+  border-radius: 999px;
 }
 
-
-
-.card-actions{
-  
-  padding: 0 1rem 1rem 1rem;
-  
-}
-
-.card-title{
-  
-  text-decoration: underline;
-  text-align: center;
-  color: #fff;
-  
-}
-
-.card-desc{
-  font-size: 18px;
-  color: #ffffff;
-  text-align: center;
-
-  
-}
-
-
-
-.landmark-page .intro{
-
-  padding: 0 var(--space-md);
-
-}
-
-.landmark-page .about{
- 
-  padding: 0 var(--space-md);
-
-
-}
-
-.landmark-page .images-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space md)
-}
-
-.landmark-page figcaption{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(255,255,255, .8);
-  padding: var(--space-xs);
-}
+/* Pagination --------------------------------------------- */
 
 #pagination {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  padding: var(--space-lg) 0;
+  align-items: center;
+  border-top: 3px solid var(--secondary-text);
+  padding-top: var(--space-md);
+  margin-top: var(--space-xl);
 }
 
-@media (min-width:684px){
-  .landmark-page .images-grid{
-    grid-template-columns: repeat(2, 1fr);
-  }
+.btn {
+  color: var(--secondary-text);
+  font-weight: 600;
 }
 
-@media (min-width:1375px){
-  .landmark-page .images-grid{
-    grid-template-columns: repeat(3, 1fr);
-  }
+
+/* NAV BAR */
+
+.primary-navigation ul{
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-navigation a{
+  text-decoration: none;
+  color: var(--clr-nav);
+  font-weight: bold;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.primary-navigation a:hover{
+  cursor: pointer;
+  color: var(--clr-nav-hover);
+  border-radius: 4px;
+}
+
+header{
+  /* border: 5px dotted red; */
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+ 
+  padding: 1rem 1.5rem;
+}
+header img{
+  /* border: 5px solid green; */
+}
+
+.primary-navigation{
+  /* border: 5px dashed blue; */
+}
+
+.logo{
+  text-decoration: none;
+  height: auto;
+  cursor: pointer;
+  font-weight: bold;
+}
+.logo:hover{
+  opacity: 0.8;
 }
